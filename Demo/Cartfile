@@ -1,0 +1,13 @@
+# 如果需要添加某一个类库，放开注释执行 carthage update --platform iOS，更新完请将注释加回去
+
+# github "SnapKit/SnapKit" ~> 4.2.0
+
+# git "https://github.com/SoalHuang/Kingfisher.git" "master"
+
+# git "https://github.com/SoalHuang/SDFoundation.git" "master"
+
+# git "https://github.com/SoalHuang/SDUIKit.git" "master"
+
+# git "https://github.com/SoalHuang/KingfisherExtension.git" "master"
+
+git "https://github.com/SoalHuang/VideoCache.git" "master"
