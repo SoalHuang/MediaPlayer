@@ -1,11 +1,10 @@
-# PTMediaPlayer
+# MediaPlayer
 ### 使用库
 * [SnapKit](https://github.com/SnapKit/SnapKit.git)
-* [Kingfisher](https://github.com/onevcat/Kingfisher.git)
-* [lottie-ios](https://github.com/SoalHuang/lottie-ios.git)
-* [PTFoundation](http://code.putao.io/ios_client/PTFoundation.git)
-* [PTUIKit](http://code.putao.io/ios_client/PTUIKit.git)
-* [KingfisherExtension](http://code.putao.io/ios_client/KingfisherExtension.git)
+* [Kingfisher](https://github.com/SoalHuang/Kingfisher.git)
+* [PTFoundation](https://github.com/SoalHuang/SDFoundation.git)
+* [PTUIKit](https://github.com/SoalHuang/SDUIKit.git)
+* [KingfisherExtension](https://github.com/SoalHuang/KingfisherExtension.git)
 
 ### 功能
 * 资源委托外部传入.
@@ -14,7 +13,7 @@
 
 ### 使用
 ```swift
-let player = PTMediaPlayer.PlayerView<CustomProvider, PTMediaPlayer.OverlayView>(delegate: self)
+let player = MediaPlayer.PlayerView<CustomProvider, MediaPlayer.OverlayView>(delegate: self)
 player.overlayView.options = .all
 player.overlayView.titleView.options = .all
 player.overlayView.progressView.options = .normal
