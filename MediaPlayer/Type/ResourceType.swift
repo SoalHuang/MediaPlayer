@@ -142,8 +142,8 @@ public enum Events: Equatable {
         case (.next, .next):                    return true
         case (.singleTouched, .singleTouched):  return true
         case (.doubleTouched, .doubleTouched):  return true
-        case (.mask(let l), .mask(let r)):      return l == r
-        case (.zoom(let l), .zoom(let r)):      return l == r
+        case (.mask(let l, _), .mask(let r, _)):    return l == r
+        case (.zoom(let l, _), .zoom(let r, _)):    return l == r
         case (.seek(let l), .seek(let r)):      return l == r
         default:                                return false
         }

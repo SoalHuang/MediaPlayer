@@ -71,7 +71,7 @@ open class OverlayView: UIView, OverlayViewType, UIGestureRecognizerDelegate, Pr
     
     open var titleViewHeight: CGFloat = 64.sd.autoScaleMax {
         didSet {
-            titleView.snp.remakeConstraints {
+            titleView.view.snp.remakeConstraints {
                 $0.top.left.width.equalToSuperview()
                 $0.height.equalTo(titleViewHeight)
             }
@@ -80,7 +80,7 @@ open class OverlayView: UIView, OverlayViewType, UIGestureRecognizerDelegate, Pr
     
     open var progressViewHeight: CGFloat = 64.sd.autoScaleMax {
         didSet {
-            progressView.snp.remakeConstraints {
+            progressView.view.snp.remakeConstraints {
                 $0.left.bottom.right.equalToSuperview()
                 $0.height.equalTo(progressViewHeight)
             }
@@ -110,14 +110,14 @@ open class OverlayView: UIView, OverlayViewType, UIGestureRecognizerDelegate, Pr
         addSub(progressView)
         addSub(indicatorView)
         
-        effectView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        titleView.snp.makeConstraints {
+        effectView.view.snp.makeConstraints { $0.edges.equalToSuperview() }
+        titleView.view.snp.makeConstraints {
             $0.top.left.width.equalToSuperview()
             $0.height.equalTo(titleViewHeight)
         }
         
-        indicatorView.snp.makeConstraints { $0.center.equalToSuperview() }
-        progressView.snp.makeConstraints {
+        indicatorView.view.snp.makeConstraints { $0.center.equalToSuperview() }
+        progressView.view.snp.makeConstraints {
             $0.left.bottom.right.equalToSuperview()
             $0.height.equalTo(progressViewHeight)
         }

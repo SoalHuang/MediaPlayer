@@ -90,7 +90,7 @@ open class PlayerContentView<Overlay: OverlayViewType>: UIView, PlayerContentVie
         
         addSub(overlayView)
         overlayView.delegate = self
-        overlayView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        overlayView.view.snp.makeConstraints { $0.edges.equalToSuperview() }
         
         sd.addNotification(name: UIApplication.didEnterBackgroundNotification, object: nil) { [weak self] _ in
             self?.applicationEnterBackground()
