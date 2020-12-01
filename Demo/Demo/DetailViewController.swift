@@ -88,6 +88,7 @@ class DetailViewController: UIViewController {
         player.overlayView.titleView.options = .all
         player.overlayView.progressView.options = .normal
         player.overlayView.progressView.controls = .normal
+        player.isAllowAudioPlayback = false
         return player
     }()
     

@@ -54,6 +54,11 @@ open class PlayerView<Provider: ProviderType, Overlay: OverlayViewType>: NSObjec
         set { contentView.isPlayingWithoutWindow = newValue }
     }
     
+    open var isAllowAudioPlayback: Bool {
+        get { return contentView.isAllowAudioPlayback }
+        set { contentView.isAllowAudioPlayback = newValue }
+    }
+    
     /// 开启日志
     open var isLogEnabled: Bool {
         get { return contentView.isLogEnabled }

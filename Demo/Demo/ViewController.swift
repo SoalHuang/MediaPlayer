@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import SnapKit
 
 class ViewController: UIViewController {
@@ -19,6 +20,17 @@ class ViewController: UIViewController {
             $0.width.equalTo(160)
             $0.height.equalTo(60)
             $0.center.equalToSuperview()
+        }
+        
+        if #available(iOS 10.0, *) {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback,
+                                                                mode: .default,
+                                                                options: [.mixWithOthers, .allowAirPlay])
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            } catch {
+                print(error)
+            }
         }
     }
     

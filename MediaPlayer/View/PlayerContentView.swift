@@ -46,6 +46,9 @@ open class PlayerContentView<Overlay: OverlayViewType>: UIView, PlayerContentVie
     /// 是否可以脱离window播放
     public var isPlayingWithoutWindow: Bool = false
     
+    /// 是否允许后台播放
+    public var isAllowAudioPlayback: Bool = false
+    
     /// 视频上的覆盖视图
     public let overlayView: Overlay
     
@@ -223,14 +226,24 @@ extension PlayerContentView {
     /// App切换到后台
     private func applicationEnterBackground() {
         log(print: isLogEnabled, "application enter background")
-        self.pause()
+        if isAllowAudioPlayback {
+            playerLayer.player = nil
+        } else {
+            self.pause()
+        }
     }
     
     /// App切换到前台激活状态
     private func applicationBecomeActive() {
         log(print: isLogEnabled, "application become active")
-        guard case .play = event, status != .endTime else { return }
-        self.replay()
+        if isAllowAudioPlayback {
+            if playerLayer.player == nil {
+                playerLayer.player = playerItem?.player
+            }
+        } else {
+            guard case .play = event, status != .endTime else { return }
+            self.replay()
+        }
     }
 }
 
