@@ -97,6 +97,21 @@ open class PlayerView<Provider: ProviderType, Overlay: OverlayViewType>: NSObjec
     public fileprivate(set) var id: IDType?
     public fileprivate(set) var url: URLType?
     
+    /// 视频总时间长度
+    public var total: TimeInterval? {
+        return contentView.total
+    }
+    
+    /// 视频当前进度
+    public var current: TimeInterval {
+        return contentView.current
+    }
+    
+    /// 视频当前已加载部分
+    public var loaded: [CMTimeRange] {
+        return contentView.loaded
+    }
+    
     public private(set) var isPaused: Bool = false
     
     /// 播放资源id

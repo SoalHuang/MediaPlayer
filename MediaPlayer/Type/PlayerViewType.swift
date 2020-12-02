@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import SDUIKit
 
 public protocol PlayerViewDelegate: NSObjectProtocol {
@@ -37,6 +38,10 @@ public protocol PlayerViewType: StateViewType {
     
     var id: IDType? { get }
     var url: URLType? { get }
+    
+    var total: TimeInterval? { get }
+    var current: TimeInterval { get }
+    var loaded: [CMTimeRange] { get }
     
     func play(id: IDType, seekTo time: TimeInterval)
     func play(url: URLType, seekTo time: TimeInterval)
